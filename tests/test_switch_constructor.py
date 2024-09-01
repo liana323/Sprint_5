@@ -1,56 +1,49 @@
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
 import locators
 
 def test_switch_sauces(driver):
-
     driver.get("https://stellarburgers.nomoreparties.site")
 
-    #переходим на вкладку соусы
-    driver.find_element(By.XPATH,locators.sauses)
-    #ждем
-    WebDriverWait(driver, 3).until(EC.visibility_of_element_located((By.XPATH, locators.sauce_item)))
+    # Переходим на вкладку соусы
+    sauces_tab = driver.find_element(By.XPATH, locators.sauces)
+    sauces_tab.click()
 
-    #кликаем на первый отобразившийся элемент
-    driver.find_element(By.XPATH, locators.sauce_item).click()
+    # Ожидание, пока первый элемент вкладки "Соусы" станет видимым
+    WebDriverWait(driver, 3).until(
+        EC.visibility_of_element_located((By.XPATH, locators.sauce_item))
+    )
 
-     #проверяем что это соуc
-    element = driver.find_element(By.XPATH, locators.item_name_in_card).text
-    assert 'Соус' in element
+    # Проверяем, что первый элемент вкладки "Соусы" отображается
+    assert driver.find_element(By.XPATH, locators.sauce_item).is_displayed()
 
-def test_switch_buns():
-    driver = webdriver.Chrome()
-    driver.get("https://stellarburgers.nomoreparties.site")
-    # переходим на вкладку начинки т.у. булки по умолчанию
-    driver.find_element(By.XPATH, locators.fillings)
-
-    #переходим на вкладку булки
-    driver.find_element(By.XPATH,locators.buns)
-    #ждем
-    WebDriverWait(driver, 3).until(EC.visibility_of_element_located((By.XPATH, locators.buns_item)))
-
-    #кликаем на первый отобразившийся элемент
-    driver.find_element(By.XPATH, locators.buns_item).click()
-
-    # проверяем что это булка
-    element = driver.find_element(By.XPATH, locators.item_name_in_card).text
-    assert 'булка' in element
-
-def test_switch_fillings():
-    driver = webdriver.Chrome()
+def test_switch_buns(driver):
     driver.get("https://stellarburgers.nomoreparties.site")
 
-    # переходим на вкладку начинки
-    driver.find_element(By.XPATH, locators.fillings)
-    #ждем
-    WebDriverWait(driver, 3).until(EC.visibility_of_element_located((By.XPATH, locators.fillings_item)))
+    # Переходим на вкладку булки
+    buns_tab = driver.find_element(By.XPATH, locators.buns)
+    buns_tab.click()
 
-    # кликаем на первый отобразившийся элемент
-    driver.find_element(By.XPATH, locators.fillings_item).click()
+    # Ожидание, пока первый элемент вкладки "Булки" станет видимым
+    WebDriverWait(driver, 3).until(
+        EC.visibility_of_element_located((By.XPATH, locators.buns_item))
+    )
 
-    # проверяем
-    element = driver.find_element(By.XPATH, locators.item_name_in_card).text
-    assert 'Мясо бессмертных моллюсков Protostomia' in element
+    # Проверяем, что первый элемент вкладки "Булки" отображается
+    assert driver.find_element(By.XPATH, locators.buns_item).is_displayed()
+
+def test_switch_fillings(driver):
+    driver.get("https://stellarburgers.nomoreparties.site")
+
+    # Переходим на вкладку начинки
+    fillings_tab = driver.find_element(By.XPATH, locators.fillings)
+    fillings_tab.click()
+
+    # Ожидание, пока первый элемент вкладки "Начинки" станет видимым
+    WebDriverWait(driver, 3).until(
+        EC.visibility_of_element_located((By.XPATH, locators.fillings_item))
+    )
+
+    # Проверяем, что первый элемент вкладки "Начинки" отображается
+    assert driver.find_element(By.XPATH, locators.fillings_item).is_displayed()

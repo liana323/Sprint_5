@@ -9,11 +9,17 @@ personal_account = "//a[@href='/account']//p[contains(text(), 'Личный Ка
 constructor_link = '//a[@href="/" and @class="AppHeader_header__link__3D_hX"]'
 constructor_header = '//h1[@class="text text_type_main-large mb-5 mt-10"]'
 logout_button = "//button[contains(@class, 'Account_button__14Yp3') and text()='Выход']"
-sauses = '//span[text()="Соусы"]'
+
+
+# Локаторы для переключения вкладок
+sauces = '//span[contains(@class, "text_type_main-default") and text()="Соусы"]'
+buns = '//h2[contains(@class, "text_type_main-medium") and text()="Булки"]'
+fillings = '//span[contains(@class, "text_type_main-default") and text()="Начинки"]'
+
+# Локаторы для элементов в каждой секции
 sauce_item = '//p[contains(text(), "Соус Spicy")]'
-item_name_in_card = '//p[1][@class="text text_type_main-medium mb-8"]'
-buns = '//span[text()="Булки"]'
 buns_item = '//p[contains(text(), "Флюоресцентная булка")]'
-fillings = '//span[text()="Начинки"]'
 fillings_item = '//p[contains(text(), "Мясо бессмертных моллюсков Protostomia")]'
 
+# Локатор для проверки заголовка элемента
+item_name_in_card = '//p[1][@class="text text_type_main-medium mb-8"]'
