@@ -5,8 +5,8 @@ from selenium.webdriver.support import expected_conditions as EC
 
 import locators
 
-def test_logout_to_account():
-    driver = webdriver.Chrome()
+def test_logout_to_account(driver):
+
     driver.get("https://stellarburgers.nomoreparties.site/")
 
     # Клик по кнопке "Личный кабинет" на главной странице

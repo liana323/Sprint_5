@@ -5,8 +5,8 @@ from selenium.webdriver.support import expected_conditions as EC
 
 import locators
 
-def test_login_use_personal_account():
-    driver = webdriver.Chrome()
+def test_login_use_personal_account(driver):
+
     driver.get("https://stellarburgers.nomoreparties.site/")
 
     # Клик по кнопке "Личный кабинет" на главной странице
@@ -17,7 +17,7 @@ def test_login_use_personal_account():
 
     # Поля ввода
     driver.find_element(By.XPATH, locators.email_field).send_keys("liana_mantashyan_13_987@mail.com")
-    driver.find_element(By.XPATH, locators.password_field).send_keys("45611451")
+    driver.find_element(By.XPATH, locators.password_field).send_keys("456456451")
     driver.find_element(By.XPATH, locators.login).click()
 
     # Ожидание, пока URL изменится на нужную страницу после регистрации
@@ -26,6 +26,4 @@ def test_login_use_personal_account():
     # Добавление assert для проверки, что произошло правильное перенаправление
     assert "site" in driver.current_url
 
-    # Закрытие браузера
-    driver.quit()
 

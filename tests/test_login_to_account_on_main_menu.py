@@ -5,8 +5,8 @@ from selenium.webdriver.support import expected_conditions as EC
 
 import locators
 
-def test_login_to_on_main_menu():
-    driver = webdriver.Chrome()
+def test_login_to_on_main_menu(driver):
+
     driver.get("https://stellarburgers.nomoreparties.site/")
 
     # Клик по кнопке "Войти в аккуант" на главной странице
@@ -25,6 +25,3 @@ def test_login_to_on_main_menu():
 
     # Добавление assert для проверки, что произошло правильное перенаправление
     assert "site" in driver.current_url
-
-    # Закрытие браузера
-    driver.quit()

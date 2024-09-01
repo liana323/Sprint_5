@@ -5,8 +5,8 @@ from selenium.webdriver.support import expected_conditions as EC
 
 import locators
 
-def test_registration_valid_data():
-    driver = webdriver.Chrome()
+def test_registration_valid_data(driver):
+
     driver.get("https://stellarburgers.nomoreparties.site/register")
 
     #Поля ввода для регистрации
@@ -20,8 +20,5 @@ def test_registration_valid_data():
 
     #Если регистрация успешная, то ты перенаправляешься на страницу с login
     assert "login" in driver.current_url
-
-    # Закрытие браузера
-    driver.quit()
 
 

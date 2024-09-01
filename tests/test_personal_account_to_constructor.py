@@ -5,8 +5,8 @@ from selenium.webdriver.support import expected_conditions as EC
 
 import locators
 
-def test_personal_account_to_constructor():
-    driver = webdriver.Chrome()
+def test_personal_account_to_constructor(driver):
+
     driver.get("https://stellarburgers.nomoreparties.site/")
 
     # Клик по кнопке "Личный кабинет" на главной странице
@@ -27,7 +27,4 @@ def test_personal_account_to_constructor():
     # Добавление assert для проверки, что произошло правильное перенаправление
     element = driver.find_element(By.XPATH, locators.constructor_header).text
     assert element == 'Соберите бургер'
-
-    # Закрытие браузера
-    driver.quit()
 

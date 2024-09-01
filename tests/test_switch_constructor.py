@@ -5,8 +5,8 @@ from selenium.webdriver.support import expected_conditions as EC
 
 import locators
 
-def test_switch_sauces():
-    driver = webdriver.Chrome()
+def test_switch_sauces(driver):
+
     driver.get("https://stellarburgers.nomoreparties.site")
 
     #переходим на вкладку соусы

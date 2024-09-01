@@ -6,8 +6,8 @@ from selenium.webdriver.support import expected_conditions as EC
 import locators
 
 
-def test_registration_field_name_empty():
-    driver = webdriver.Chrome()
+def test_registration_field_name_empty(driver):
+
     driver.get("https://stellarburgers.nomoreparties.site/register")
 
     # Поля ввода для регистрации и ввод валидных данных
@@ -26,9 +26,6 @@ def test_registration_field_name_empty():
 
     # кнопка "Зарегистрироваться" не кликабельна
     assert driver.current_url == current_url
-
-    # Закрытие браузера
-    driver.quit()
 
 
 

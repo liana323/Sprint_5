@@ -7,7 +7,7 @@ import locators
 
 
 def test_registration_field_name_empty():
-    driver = webdriver.Chrome()
+
     driver.get("https://stellarburgers.nomoreparties.site/register")
 
     # Ввод данных в том числе некорретного пароля
@@ -21,8 +21,6 @@ def test_registration_field_name_empty():
     # Выдает ошибку -
     assert error_message =='Некорректный пароль'
 
-    # Закрытие браузера
-    driver.quit()
 
 
 
