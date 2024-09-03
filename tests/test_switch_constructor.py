@@ -16,7 +16,7 @@ def test_switch_sauces(driver):
     )
 
     # Проверяем, что первый элемент вкладки "Соусы" отображается
-    assert driver.find_element(By.XPATH, locators.sauce_item).is_displayed()
+    assert driver.find_element(By.XPATH, "//div[contains(@class, 'current') and .//span[text()='Соусы']]")
 
 def test_switch_buns(driver):
     driver.get("https://stellarburgers.nomoreparties.site")
@@ -31,7 +31,7 @@ def test_switch_buns(driver):
     )
 
     # Проверяем, что первый элемент вкладки "Булки" отображается
-    assert driver.find_element(By.XPATH, locators.buns_item).is_displayed()
+    assert driver.find_element(By.XPATH, "//div[contains(@class, 'current') and .//span[text()='Булки']]")
 
 def test_switch_fillings(driver):
     driver.get("https://stellarburgers.nomoreparties.site")
@@ -46,4 +46,4 @@ def test_switch_fillings(driver):
     )
 
     # Проверяем, что первый элемент вкладки "Начинки" отображается
-    assert driver.find_element(By.XPATH, locators.fillings_item).is_displayed()
+    assert driver.find_element(By.XPATH, "//div[contains(@class, 'current') and .//span[text()='Начинки']]")
