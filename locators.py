@@ -23,3 +23,7 @@ fillings_item = '//p[contains(text(), "Мясо бессмертных молл�
 
 # Локатор для проверки заголовка элемента
 item_name_in_card = '//p[1][@class="text text_type_main-medium mb-8"]'
+#
+sauces_tab ="//div[contains(@class, 'current') and .//span[text()='Соусы']]"
+buns_tab ="//div[contains(@class, 'current') and .//span[text()='Булки']]"
+fillings_tab ="//div[contains(@class, 'current') and .//span[text()='Начинки']]"
